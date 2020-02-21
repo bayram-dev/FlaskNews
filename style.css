@@ -1,0 +1,33 @@
+body, html {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+table, td, th {
+    border: 1px solid #aaa;
+}
+
+table {
+	vertical-align: center;
+	text-align: center;
+    border-collapse: collapse;
+    width: 70%;
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+a{
+    vertical-align: center;
+    text-align: center;
+}
