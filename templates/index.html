@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Simple news</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+	<h1 style="text-align: center;">
+		Simple news on python
+	{% if news|length < 1%}
+		<h4>There's no new news for now)</h4>
+	{% else %}
+	</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>News</th>
+					<th>Date</th>
+					<th>Options</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for i in news %}	
+				<tr>
+					<td>{{i.id }}</td>
+					<td><a href="/news/{{ i.id }}">{{ i.Title }}</a></td>
+                	<td>{{ i.date_created.date() }}</td>
+                	<td><a href="/delete/{{ i.id }}">Delete</a><br><a href="/update/{{ i.id }}">Update</a></td>
+
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+	<form action="/" method="POST">
+		<a>Title</a><br>
+		<input type="text" name="title"><br>
+		<a>Content</a><br>
+		<textarea name="content"></textarea><br>
+		<input type="submit" value="Add news">
+	</form>
+</div>
+{% endblock %}

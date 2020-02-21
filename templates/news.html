@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>News {{news.id}}</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+	<h5>{{ news.date_created.date() }}</h5>
+	<h1>{{ news.Title }}</h1><br>
+	{% autoescape false %}
+    {{content}}
+{% endautoescape %}
+</div>
+{% endblock %}
