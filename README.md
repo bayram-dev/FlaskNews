@@ -10,9 +10,9 @@
 
 
 # How to start?
-Create a virtual environment (i used env, to create it = (pip install virtualenv && virtualenv env))
-After that install all required modules
-Then, python app.py
+1. Create a virtual environment (i used env, to create it = (pip install virtualenv && virtualenv env))
+2. After that install all required modules
+3. Then, python app.py
 # Your help
 If you want to help me with to continue to develop this project, you can donate me with this link:
 www.qiwi.com/n/LLIAJIYH
