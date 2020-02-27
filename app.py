@@ -12,18 +12,20 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
-
+#Table with News
 class Todo(db.Model):	
 	id = db.Column(db.Integer, primary_key=True)
 	Title = db.Column(db.String(200), nullable=False)
 	Content = db.Column(db.String(200), nullable=False)
 	date_created = db.Column(db.DateTime, default=datetime.utcnow)
-class Users(db.Model):
-	user_id = db.Column(db.Integer, primary_key=True)
-	username = db.Column(db.String(200), nullable=False)
-	email = db.Column(db.String(200), nullable=False)
-	password = db.Column(db.String(200), nullable=False)
-	rank = db.Column(db.String(200), nullable=True)
+
+#Upcoming update
+#class Users(db.Model):
+#	user_id = db.Column(db.Integer, primary_key=True)
+#	username = db.Column(db.String(200), nullable=False)
+#	email = db.Column(db.String(200), nullable=False)
+#	password = db.Column(db.String(200), nullable=False)
+#	rank = db.Column(db.String(200), nullable=True)
 				
 
 @app.route('/', methods=['POST', 'GET'])
@@ -46,6 +48,8 @@ def index():
 	else:
 		all_news = Todo.query.order_by(Todo.date_created).all()
 		return render_template('index.html', news=all_news)
+
+
 @app.route('/news/<int:news_id>')
 def news(news_id):
 	try:
@@ -56,6 +60,8 @@ def news(news_id):
 		session.close()
 	except:
 		return "Something went wrong!"
+
+
 @app.route('/delete/<int:news_id>')
 def delete(news_id):
 	news_to_delete = Todo.query.get_or_404(news_id)
@@ -65,6 +71,7 @@ def delete(news_id):
 		return redirect('/')
 	except:
 		return "Something went wrong"
+
 
 @app.route('/update/<int:news_id>', methods=['GET', 'POST'])
 def update(news_id):
@@ -79,6 +86,8 @@ def update(news_id):
 			return "There was an issue updating this news"
 	else:
 		return render_template('update.html', news=news)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 
