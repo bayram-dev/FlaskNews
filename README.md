@@ -12,7 +12,8 @@
 # How to start?
 1. Create a virtual environment (i used env, to create it = (pip install virtualenv && virtualenv env))
 2. After that install all required modules(pip install -r requirements.txt)
-3. Then, python app.py
+3. Create table with it, do it one by one [ python, from app import db, db.create_all() ]
+4. Then, python app.py
 # Your help
 If you want to help me with to continue to develop this project, you can donate me with this link:
 www.qiwi.com/n/LLIAJIYH
