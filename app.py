@@ -42,7 +42,7 @@ def index():
 def news(news_id):
 	try:
 		news = Todo.query.get(news_id)
-		html_things = ("<br>", "<br><br>")
+		html_things = ("<br>", "<br><br>") # Formating {0[0]} to <br> AND {0[1]} to double <br>
 		main_content = news.Content.format(html_things)
 		return render_template('news.html', news=news, content=main_content)
 		session.close()
