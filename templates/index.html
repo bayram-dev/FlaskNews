@@ -25,9 +25,9 @@
 			{% for i in news %}	
 				<tr>
 					<td>{{i.id }}</td>
-					<td><a href="/news/{{ i.id }}">{{ i.Title }}</a></td>
+					<td><a href="/{{ i.id }}/">{{ i.Title }}</a></td>
                 	<td>{{ i.date_created.date() }}</td>
-                	<td><a href="/delete/{{ i.id }}">Delete</a><br><a href="/update/{{ i.id }}">Update</a></td>
+                	<td><a href="/{{ i.id }}/delete/">Delete</a><br><a href="/{{ i.id }}/update/">Update</a></td>
 
 				</tr>
 			{% endfor %}
