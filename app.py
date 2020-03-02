@@ -1,7 +1,3 @@
-#TODO
-# 1) Доделать query в /news
-# 2) Добавить минимальный CSS во все старницы
-# 3) Проверить подклюение через телефон
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, String, Integer
@@ -19,14 +15,6 @@ class Todo(db.Model):
 	Content = db.Column(db.String(200), nullable=False)
 	date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
-#Upcoming update
-#class Users(db.Model):
-#	user_id = db.Column(db.Integer, primary_key=True)
-#	username = db.Column(db.String(200), nullable=False)
-#	email = db.Column(db.String(200), nullable=False)
-#	password = db.Column(db.String(200), nullable=False)
-#	rank = db.Column(db.String(200), nullable=True)
-				
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -50,7 +38,7 @@ def index():
 		return render_template('index.html', news=all_news)
 
 
-@app.route('/news/<int:news_id>')
+@app.route('/<int:news_id>/')
 def news(news_id):
 	try:
 		news = Todo.query.get(news_id)
@@ -62,7 +50,7 @@ def news(news_id):
 		return "Something went wrong!"
 
 
-@app.route('/delete/<int:news_id>')
+@app.route('/<int:news_id>/delete/')
 def delete(news_id):
 	news_to_delete = Todo.query.get_or_404(news_id)
 	try:
@@ -73,7 +61,7 @@ def delete(news_id):
 		return "Something went wrong"
 
 
-@app.route('/update/<int:news_id>', methods=['GET', 'POST'])
+@app.route('/<int:news_id>/update/', methods=['GET', 'POST'])
 def update(news_id):
 	news = Todo.query.get_or_404(news_id)
 	if request.method == 'POST':
