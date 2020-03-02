@@ -5,6 +5,10 @@ This project can be a good start for someone, who wanted to make a fully working
 <p align="center">
 	<img src="https://github.com/LLIAJIYH/FlaskNews/blob/master/GITHUB-FILES/example-1.png"/>
 </p>
+
+If you want me to continue contributing this project and support me, you can donate me here:
+www.qiwi.com/n/LLIAJIYH
+
 # Modules
 
 * flask
