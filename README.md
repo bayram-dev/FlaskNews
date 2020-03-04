@@ -1,8 +1,8 @@
-# Simplest news on python
+<h1 align="center"> Simplest news on python</h1>
 
-Hello everybody! In this repository you can see the simplest news website made with Flask you can ever find.
+<p align="center">Hello everybody! In this repository you can see the simplest news website made with Flask you can ever find.
 This project can be a good start for someone, who wanted to make a fully working News website.
-That's how it looks for now:
+That's how it looks for now:</p>
 <p align="center">
 	<img src="https://github.com/LLIAJIYH/FlaskNews/blob/master/GITHUB-FILES/example-1.png"/>
 </p>
